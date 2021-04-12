@@ -1,4 +1,14 @@
 - hosts: 10.0.1.44
   tasks:
+   - name: Get username
+     shell: whoami
+     register: theuser
+
+   - name: Get hostname
+     shell: hostname
+     register: thehost
+
+   - debug: msg="Hostname {{ thehost.stdout  }}, Username {{ theuser.stdout }}"
+
    - name: copy file
-     copy: src=hello-world.txt dest=/tmp/hello-world.txt
+     copy: src=hello-world.txt dest=/root/hello-world.txt
