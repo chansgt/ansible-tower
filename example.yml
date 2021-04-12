@@ -11,4 +11,4 @@
    - debug: msg="Hostname {{ thehost.stdout  }}, Username {{ theuser.stdout }}"
 
    - name: copy file
-     copy: src=hello-world.txt dest=/root/hello-world.txt
+     copy: src=hello-world.txt dest=/tmp/hello-world.txt
