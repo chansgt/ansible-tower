@@ -1,0 +1,4 @@
+- hosts: 10.0.1.44
+  tasks:
+   - name: copy file
+     copy: src=hello-world.txt dest=/tmp/hello-world.txt
