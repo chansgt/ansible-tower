@@ -12,3 +12,9 @@
 
    - name: copy file
      copy: src=hello-world.txt dest=/root/hello-world.txt
+
+   - name: start service AAM
+     shell: /etc/init.d/aimprv start
+   
+   - name: status service AAM
+     shell: /etc/init.d/aimprv status
