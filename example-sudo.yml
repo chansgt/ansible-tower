@@ -1,6 +1,4 @@
 - hosts: 10.0.1.44
-  become: yes
-  become_user: administrator
   tasks:
    - name: Get username
      shell: whoami
@@ -13,4 +11,4 @@
    - debug: msg="Hostname {{ thehost.stdout  }}, Username {{ theuser.stdout }}"
 
    - name: copy file
-     copy: src=hello-world.txt dest=/tmp/hello-world.txt
+     copy: src=hello-world.txt dest=/root/hello-world.txt
