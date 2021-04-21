@@ -8,7 +8,7 @@
      shell: hostname
      register: thehost
 
-   - debug: msg="Hostname {{ thehost.stdout  }}, Username {{ theuser.stdout }} test {{ ansible_ssh_user }} and {{ ansible_connection }}"
+   - debug: msg="Hostname {{ thehost.stdout  }}, Username {{ theuser.stdout }} test {{ username_custom }} and {{ password_custom }}"
 
    - name: copy file
      copy: src=hello-world.txt dest=/tmp/hello-world.txt
