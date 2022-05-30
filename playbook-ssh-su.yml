@@ -1,0 +1,23 @@
+- hosts: Host1
+  collections:
+    - cyberark.conjur
+  vars:
+      become: true
+      become_method: su
+      become_user: root
+      ansible_connection: ssh
+      ansible_host: "100.0.1.54"
+      ansible_user: "{{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur01/VI_UNIX_CONJUR/VI_UNIX_SSH-100.0.1.54-administrator/username') }}"
+      ansible_ssh_pass: "{{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur01/VI_UNIX_CONJUR/VI_UNIX_SSH-100.0.1.54-administrator/password') }}"
+      ansible_become_pass:  "{{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur01/VI_UNIX_CONJUR/100.0.1.54-root-VI_UNIX_SSH/password') }}"
+      gather_facts: no
+  tasks:
+    - name: Get user name
+      shell: whoami
+      register: theuser
+
+    - name: Get host name
+      shell: hostname
+      register: thehost
+
+    - debug: msg="ansible_host{{":"}}{{ theuser.stdout }}\nansible_user{{":"}} 'iss'\nansible_ssh_pass{{":"}}{{ '{{' }} lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur01/VI_UNIX_CONJUR/VI_UNIX_SSH-100.0.1.54-{{ theuser.stdout }}/password') {{'}}'}}"
