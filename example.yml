@@ -1,4 +1,8 @@
 - hosts: localhost
+  collections:
+    - cyberark.conjur
+  vars:
+    ansible_collections_path: /var/lib/aws/.ansible/collections/ansible_collections/cyberark/conjur
   tasks:
    - name: Get username
      shell: whoami
