@@ -10,7 +10,6 @@
 
    - name: Conjur
      shell: echo {{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur01/VI_UNIX_CONJUR/100.0.2.55-administrator-VI_UNIX_SSH/username') }}
-     become: yes
 
    - debug: msg="Hasil dari username_custom  {{ username_custom }}, hasil dari password_custom {{ password_custom }}"
 
