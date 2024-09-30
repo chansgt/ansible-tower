@@ -1,4 +1,8 @@
 - hosts: localhost
+  ansible_become: yes
+  ansible_become_method: su
+  ansible_become_user: root
+  ansible_become_pass: Cyberark1
   tasks:
    - name: Get username
      shell: whoami
