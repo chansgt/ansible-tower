@@ -2,7 +2,7 @@
   collections:
     - cyberark.conjur
   vars:
-    ansible_collections_path: /var/lib/aws/.ansible/collections/ansible_collections/cyberark/conjur
+    ansible_collections_path: /home/.ansible/collections/ansible_collections/cyberark/conjur/ansible_collections/cyberark/conjur
   tasks:
    - name: Get username
      shell: whoami
