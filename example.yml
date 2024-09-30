@@ -1,8 +1,4 @@
 - hosts: localhost
-  become: yes
-  become_method: su
-  become_user: root
-  become_pass: Cyberark1
   tasks:
    - name: Get username
      shell: whoami
