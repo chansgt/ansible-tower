@@ -1,4 +1,9 @@
-- hosts: localhost
+- hosts: 100.0.1.77
+  vars:
+      ansible_connection: ssh
+      ansible_host: 100.0.1.77
+      ansible_user: "administrator"
+      ansible_password: "Cyberark1"
   tasks:
    - name: Get username
      shell: whoami
