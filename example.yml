@@ -5,32 +5,32 @@
   #    ansible_user: "administrator"
   #    ansible_password: "Cyberark1"
   tasks:
-   - name: Hapus CONJUR_AUTHN_LOGIN
-     environment:
-       CONJUR_AUTHN_LOGIN: ""
+    - name: Hapus CONJUR_AUTHN_LOGIN
+      environment:
+        CONJUR_AUTHN_LOGIN: ""
         
-   - name: Hapus CONJUR_AUTHN_API_KEY
-     environment:
-       CONJUR_AUTHN_API_KEY: ""
+    - name: Hapus CONJUR_AUTHN_API_KEY
+      environment:
+        CONJUR_AUTHN_API_KEY: ""
         
-   - name: Get username
-     shell: whoami
-     register: theuser
+    - name: Get username
+      shell: whoami
+      register: theuser
 
-   - name: Get hostname
-     shell: hostname
-     register: thehost
+    - name: Get hostname
+      shell: hostname
+      register: thehost
 
-   - name: File path
-     shell: pwd
-     register: fp
+    - name: File path
+      shell: pwd
+      register: fp
      
-   - name: Conjur
-     shell: echo {{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur03/VI_DevOps/100.0.1.77-cityapp-demo-VI_MYSQL/username') }}
+    - name: Conjur
+      shell: echo {{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur03/VI_DevOps/100.0.1.77-cityapp-demo-VI_MYSQL/username') }}
 
-   - name: List semua variabel lingkungan
-     debug:
-       var: ansible_env
+    - name: List semua variabel lingkungan
+      debug:
+        var: ansible_env
 
-   - name: copy file
-     copy: src=hello-world.txt dest=/tmp/hello-world.txt
+    - name: copy file
+      copy: src=hello-world.txt dest=/tmp/hello-world.txt
