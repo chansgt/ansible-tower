@@ -2,9 +2,11 @@
 - hosts: localhost
   tasks:
     - name: Hapus CONJUR_AUTHN_LOGIN
+      command: echo "CONJUR_AUTHN_LOGIN is $CONJUR_AUTHN_LOGIN"
       environment:
         CONJUR_AUTHN_LOGIN: ""
     - name: Hapus CONJUR_AUTHN_API_KEY
+      command: echo "CONJUR_AUTHN_API_KEY is $CONJUR_AUTHN_API_KEY"
       environment:
         CONJUR_AUTHN_API_KEY: ""
     - name: Get username
