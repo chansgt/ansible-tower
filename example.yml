@@ -7,11 +7,11 @@
   tasks:
    - name: Hapus MY_VARIABLE dengan set_fact
      set_fact:
-       CONJUR_AUTHN_LOGIN: ""
+       ansible_env.CONJUR_AUTHN_LOGIN: ""
         
    - name: Hapus MY_VARIABLE dengan set_fact
      set_fact:
-       CONJUR_AUTHN_API_KEY: ""
+       ansible_env.CONJUR_AUTHN_API_KEY: ""
         
    - name: Get username
      shell: whoami
