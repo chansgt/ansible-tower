@@ -6,8 +6,8 @@
   #    ansible_password: "Cyberark1"
   tasks:
     - name: Tampilkan nilai variabel lingkungan
-      debug:
-        msg: "{{ lookup('env', 'CONJUR_AUTHN_LOGIN') }}"
+      debug: msg: "{{ lookup('env', 'CONJUR_AUTHN_LOGIN') }}"
+        
    - name: Get username
      shell: whoami
      register: theuser
