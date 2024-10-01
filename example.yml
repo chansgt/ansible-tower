@@ -1,4 +1,4 @@
-- hosts: 100.0.1.43
+- hosts: localhost
   collections:
     - cyberark.conjur
   vars:
