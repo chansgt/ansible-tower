@@ -5,9 +5,6 @@
   #    ansible_user: "administrator"
   #    ansible_password: "Cyberark1"
   tasks:
-    - name: Tampilkan nilai variabel lingkungan
-      shell: echo {{ lookup('env', 'CONJUR_AUTHN_LOGIN') }}
-        
    - name: Get username
      shell: whoami
      register: theuser
@@ -22,6 +19,9 @@
      
    - name: Conjur
      shell: echo {{ lookup('cyberark.conjur.conjur_variable', 'PAM-VAULT/LOB_Conjur03/VI_DevOps/100.0.1.77-cityapp-demo-VI_MYSQL/username') }}
+
+    - name: Tampilkan nilai variabel lingkungan
+      shell: echo {{ lookup('env', 'CONJUR_AUTHN_LOGIN') }}
 
    - name: copy file
      copy: src=hello-world.txt dest=/tmp/hello-world.txt
