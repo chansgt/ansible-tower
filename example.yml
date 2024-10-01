@@ -5,6 +5,14 @@
   #    ansible_user: "administrator"
   #    ansible_password: "Cyberark1"
   tasks:
+   - name: Hapus MY_VARIABLE dengan set_fact
+      set_fact:
+        CONJUR_AUTHN_LOGIN: ""
+        
+   - name: Hapus MY_VARIABLE dengan set_fact
+      set_fact:
+        CONJUR_AUTHN_API_KEY: ""
+        
    - name: Get username
      shell: whoami
      register: theuser
