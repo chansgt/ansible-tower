@@ -6,12 +6,12 @@
   #    ansible_password: "Cyberark1"
   tasks:
    - name: Hapus MY_VARIABLE dengan set_fact
-     set_fact:
-       ansible_env.CONJUR_AUTHN_LOGIN: ""
+     environment:
+       CONJUR_AUTHN_LOGIN: ""
         
    - name: Hapus MY_VARIABLE dengan set_fact
-     set_fact:
-       ansible_env.CONJUR_AUTHN_API_KEY: ""
+     environment:
+       CONJUR_AUTHN_API_KEY: ""
         
    - name: Get username
      shell: whoami
