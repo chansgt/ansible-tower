@@ -22,9 +22,6 @@
       shell: echo {{ lookup('cyberark.conjur.conjur_variable',
         'PAM-VAULT/LOB_Conjur03/VI_DevOps/100.0.1.77-cityapp-demo-VI_MYSQL/username')
         }}
-    - name: Debug my_var
-      debug:
-        msg: "Nilai dari my_var adalah: {{ CONJUR_AUTHN_LOGIN }}"
     #- name: List semua variabel lingkungan
     #  debug:
     #    var: ansible_env
