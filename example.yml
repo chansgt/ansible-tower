@@ -24,7 +24,7 @@
         }}
 
     - name: Check envar hosts
-      shell: echo {{ app_env }}
+      shell: echo {{ 'ansible_password' }}
     #- name: List semua variabel lingkungan
     #  debug:
     #    var: ansible_env
