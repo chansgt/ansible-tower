@@ -23,9 +23,19 @@
         'PAM-VAULT/LOB_Conjur03/VI_DevOps/100.0.1.77-cityapp-demo-VI_MYSQL/username')
         }}
 
-    - name: Check envar hosts
-      shell: env
-      register: env_output
+    - name: Print MY_CUSTOM_VAR from inventory
+      hosts: all
+      gather_facts: false
+      tasks:
+        - name: Run env with injected var
+          shell: env
+          environment:
+            MY_CUSTOM_VAR: "{{ test }}"
+          register: output
+    
+        - name: Show output
+          debug:
+            var: output.stdout_lines
     #- name: List semua variabel lingkungan
     #  debug:
     #    var: ansible_env
