@@ -22,15 +22,15 @@
       shell: echo {{ lookup('cyberark.conjur.conjur_variable',
         'PAM-VAULT/LOB_Conjur03/VI_DevOps/100.0.1.77-cityapp-demo-VI_MYSQL/username')
         }}
-    - name: Run env with injected var
-      shell: env
-      environment:
-        TEST: "{{ test }}"
-      register: output
+    # - name: Run env with injected var
+    #   shell: env
+    #   environment:
+    #     TEST: "{{ test }}"
+    #   register: output
 
-    - name: Show output
-      debug: 
-        var: output.stdout_lines
+    # - name: Show output
+    #   debug: 
+    #     var: output.stdout_lines
 
     #- name: List semua variabel lingkungan
     #  debug:
